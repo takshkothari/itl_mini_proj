@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            background-color: #E8E8E8;
+            color: #57b2d0;
+            padding-top: 50px; 
+            background-image: url('../static/images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .form-container {
+            width: 360px; 
+            margin: auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px #87CEEB;
+            margin-top: 100px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #0087b7;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #57b2d0;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #fd7e14;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #fd7e14;
+        }
+
+        .already-account {
+            color: #077ca3;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .already-account:hover {
+            color: #33ccff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2 class="mb-4">SIGN UP</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_username">Username:</label>
+                            <input type="text" name="username" id="id_username" class="form-control" required>
+                            {{ form.username.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_student_name">Student Name:</label>
+                            <input type="text" name="student_name" id="id_student_name" class="form-control"
+                                required>
+                            {{ form.student_name.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_registration_number">Registration Number:</label>
+                            <input type="text" name="registration_number" id="id_registration_number"
+                                class="form-control" required>
+                            {{ form.registration_number.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_roll_number">Roll Number:</label>
+                            <input type="text" name="roll_number" id="id_roll_number" class="form-control" required>
+                            {{ form.roll_number.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password1">Password:</label>
+                            <input type="password" name="password1" id="id_password1" class="form-control" required>
+                            {{ form.password1.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password2">Confirm Password:</label>
+                            <input type="password" name="password2" id="id_password2" class="form-control" required>
+                            {{ form.password2.errors }}
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Sign up</button>
+                    </form>
+                    <a href="{% url 'login' %}" class="already-account">Already have an account?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
