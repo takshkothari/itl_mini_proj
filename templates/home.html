@@ -37,16 +37,16 @@
             max-width: 1300px;
             margin: 15px;
             padding: 25px;
-            background-color: #3e8eb9;
+            background-color: #ee8474;
             border-radius: 12px;
-            box-shadow: 0 2px 4px #3399ff;
+            box-shadow: 0 2px 4px #ff4133fa;
         }
 
         .column {
             padding: 25px;
             border-radius: 12px;
-            background-color: #FFF;
-            box-shadow: 0 2px 4px #3e8eb9;
+            background-color: #ee8474;
+            box-shadow: 0 2px 4px #ee8474;
             transition: transform 0.2s ease;
         }
 
@@ -58,14 +58,14 @@
         }
 
         h3 {
-            color: #123e4d;
+            color: 'black';
             font-family: 'Roboto',sans-serif;
             font-size: 25px;
             font-weight: bold;
         }
 
         h2 {
-            color: #3e8eb9;
+            color: #000000;
             font-family: 'Roboto',sans-serif;
             font-size: 30px;
             font-weight: bold;
@@ -131,17 +131,18 @@
 
         th,
         td {
-            border: 1px solid #87CEEB;
+            border: 1px solid #ee8474;
             padding: 8px;
             text-align: left;
         }
 
         th {
-            background-color: #87CEEB;
+            color: #FFF;
+            background-color: #ee8474;
         }
 
         tbody tr:hover {
-            background-color: #c7ecee;
+            background-color: #ee8474;
         }
 
         .modal-content {
@@ -162,7 +163,7 @@
 <div class="container">
     <br>
     <h1>{{ welcome_message }}</h1>
-    <h3>Hello, {{ user.username }}!</h3>
+    <h3>Welcome to your dashboard, {{ user.username }}!</h3>
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
         <button type="submit">Logout</button>
@@ -170,7 +171,7 @@
     <br><br><br>
     <div class="dashboard">
         <div class="column card bg-light">
-            <h2><i class="bi bi-sticky"></i> Notes/Resources</h2>
+            <h2><i class="bi bi-sticky"></i> Your Resources</h2>
             <table>
                 <thead>
                     <tr>
@@ -184,7 +185,7 @@
                     </tr>
                     {% empty %}
                     <tr>
-                        <td>No resources available.</td>
+                        <td>Sorry! No resources are available.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -192,11 +193,11 @@
         </div>
 
         <div class="column card bg-light">
-            <h2><i class="bi bi-award"></i> Marks</h2>
+            <h2><i class="bi bi-award"></i>Your Marks</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Assignment Title</th>
+                        <th>Assignment</th>
                         <th>Score</th>
                     </tr>
                 </thead>
@@ -208,7 +209,7 @@
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="2">No marks available.</td>
+                        <td colspan="2">Sorry! No marks are available.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -216,7 +217,7 @@
         </div>
 
         <div class="column card bg-light">
-            <h2><i class="bi bi-megaphone"></i> Announcements</h2>
+            <h2><i class="bi bi-megaphone"></i> Important Announcements!!</h2>
             <table>
                 <thead>
                     <tr>
@@ -233,7 +234,7 @@
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="2">No announcements.</td>
+                        <td colspan="2">Sorry! No announcements available.</td>
                     </tr>
                     {% endfor %}
                 </tbody>
