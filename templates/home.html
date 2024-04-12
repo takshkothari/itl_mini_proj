@@ -265,14 +265,7 @@
 {% endfor %}
 {% endif %}
 <br>
-<form action="{% url 'submit_query' %}" method="post">
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="queryMessage">Enter your query:</label>
-        <textarea class="form-control" id="queryMessage" name="message" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

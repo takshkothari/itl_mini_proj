@@ -66,11 +66,11 @@ def logout_view(request):
     return redirect('login')
 
 
-def submit_query(request):
-    if request.method == "POST":
-        message = request.POST.get('message', '')
-        query = Query(student=request.user, message=message)
-        query.save()
-        messages.success(request, 'Submitted query successfully')
-        return redirect('/home')
-    return redirect('/home')
+# def submit_query(request):
+#     if request.method == "POST":
+#         message = request.POST.get('message', '')
+#         query = Query(student=request.user, message=message)
+#         query.save()
+#         messages.success(request, 'Submitted query successfully')
+#         return redirect('/home')
+#     return redirect('/home')
