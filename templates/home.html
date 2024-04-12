@@ -165,7 +165,7 @@
 </body>
 <div class="background-image"></div>
 <div class="container">
-    <br>
+    <br><br>
     <h1>{{ welcome_message }}</h1>
     <h3>Welcome to your dashboard, {{ user.username }}!</h3>
     <form action="{% url 'logout' %}" method="post">
@@ -173,7 +173,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #f40000; color: white;">Logout</button>
 
     </form>
-    <br><br><br>
+    <br><br>
     <div class="dashboard">
         <div class="column card bg-light">
             <h3><i class="bi bi-chat-left-text-fill" style="color: black;"></i>

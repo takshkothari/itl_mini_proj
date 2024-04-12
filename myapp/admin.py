@@ -4,7 +4,7 @@ from .models import Resource, Announcement, Mark, Query
 admin.site.register(Resource)
 admin.site.register(Announcement)
 admin.site.register(Mark)
-admin.site.register(Query)
+
 
 
 class QueryAdmin(admin.ModelAdmin):
