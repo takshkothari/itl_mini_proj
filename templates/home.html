@@ -7,9 +7,13 @@
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=BebasNeue:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -52,21 +56,21 @@
 
         h1 {
             color: #123e4d;
-            font-family: 'Roboto',sans-serif;
+            font-family: 'Poppins',sans-serif;
             font-size: 45px;
             font-weight: bold;
         }
 
         h3 {
             color: 'black';
-            font-family: 'Roboto',sans-serif;
+            font-family: 'Poppins',sans-serif;
             font-size: 25px;
             font-weight: bold;
         }
 
         h2 {
             color: #000000;
-            font-family: 'Roboto',sans-serif;
+            font-family: 'Poppins',sans-serif;
             font-size: 30px;
             font-weight: bold;
         }
@@ -166,13 +170,14 @@
     <h3>Welcome to your dashboard, {{ user.username }}!</h3>
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #28a745; color: white;">Logout</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #f40000; color: white;">Logout</button>
 
     </form>
     <br><br><br>
     <div class="dashboard">
         <div class="column card bg-light">
-            <h2><i class="bi bi-megaphone"></i> Announcements</h2>
+            <h3><i class="bi bi-chat-left-text-fill" style="color: black;"></i>
+                ANNOUNCEMENTS</h3>
             <table>
                 <thead>
                     <tr>
@@ -197,7 +202,7 @@
         </div>
         
         <div class="column card bg-light">
-            <h2><i class="bi bi-award"></i> Your Marks</h2>
+            <h3><i class="bi bi-pencil-square" style="color: #333"></i> YOUR MARKS</h3>
             <table>
                 <thead>
                     <tr>
@@ -220,7 +225,8 @@
             </table>
         </div>
         <div class="column card bg-light">
-            <h2><i class="bi bi-sticky"></i> Your Resources</h2>
+            <h3><i class="bi bi-journal-bookmark" style="color: black;"></i>
+                YOUR RESOURCES</h3>
             <table>
                 <thead>
                     <tr>
@@ -233,8 +239,9 @@
                     <tr>
                         <td>{{ resource.title }}</td>
                         <td>
-                            <a href="{{ resource.link }}" class="btn btn-success" download target="_blank">
-                                <i class="bi bi-download"></i>
+                            <a href="{{ resource.link }}" class="btn btn-primary" download target="_blank">
+                                <i class="bi bi-cloud-download" style="color: #fff;"></i>
+
                             </a>
                         </td>
                     </tr>
